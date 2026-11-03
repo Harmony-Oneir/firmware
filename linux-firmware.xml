@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Скачивает linux-firmware зафиксированной версии в firmware/linux-firmware.
+     Подключается ссылкой из .repo/local_manifests (см. README). -->
+<manifest>
+  <remote name="kernel-firmware"
+          fetch="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/" />
+
+  <project name="linux-firmware.git"
+           path="oneir/firmware/linux-firmware"
+           remote="kernel-firmware"
+           revision="refs/tags/20250311"
+           clone-depth="1" />
+</manifest>
