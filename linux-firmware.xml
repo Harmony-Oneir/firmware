@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Скачивает linux-firmware зафиксированной версии в firmware/linux-firmware.
+<!-- Скачивает linux-firmware и wireless-regdb зафиксированных версий в oneir/firmware/.
      Подключается ссылкой из .repo/local_manifests (см. README). -->
 <manifest>
+
+  <!-- Прошивки устройств -->
   <remote name="kernel-firmware"
           fetch="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/" />
 
@@ -10,4 +12,15 @@
            remote="kernel-firmware"
            revision="refs/tags/20250311"
            clone-depth="1" />
+
+  <!-- База региональных правил Wi-Fi (regulatory.db) для cfg80211; встраивается в ядро -->
+  <remote name="wireless-regdb"
+          fetch="https://git.kernel.org/pub/scm/linux/kernel/git/wens/" />
+
+  <project name="wireless-regdb.git"
+           path="oneir/firmware/wireless-regdb"
+           remote="wireless-regdb"
+           revision="refs/tags/master-2026-09-03"
+           clone-depth="1" />
+
 </manifest>
